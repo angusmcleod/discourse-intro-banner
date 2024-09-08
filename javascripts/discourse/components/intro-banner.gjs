@@ -86,7 +86,7 @@ export default class IntroBanner extends Component {
             <iframe
               width="640"
               height="360"
-              src="https://www.loom.com/embed/d5137b1154dc4247bae0fc47863cb28b?sid=dbdab025-7699-4dfa-abf2-300f25808654"
+              src="https://www.loom.com/embed/4ae4ea226a4d43469d329aca3b79395d?sid=b40f4fe7-ed8c-48bc-9527-4571ab734d75"
               frameborder="0"
               webkitallowfullscreen
               mozallowfullscreen
