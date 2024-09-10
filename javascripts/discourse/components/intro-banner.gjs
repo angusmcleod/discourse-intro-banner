@@ -30,9 +30,11 @@ export default class IntroBanner extends Component {
 
   constructor() {
     super(...arguments);
-    this.currentUser.findDetails().then(() => {
-      this.dismissed = this.determinedDismissed();
-    });
+    if (this.currentUser) {
+      this.currentUser.findDetails().then(() => {
+        this.dismissed = this.determinedDismissed();
+      });
+    }
   }
 
   get show() {
@@ -44,10 +46,7 @@ export default class IntroBanner extends Component {
   }
 
   determinedDismissed() {
-    if (!this.dismissField) {
-      return false;
-    }
-    if (!this.currentUser.user_fields) {
+    if (!this.dismissField || !this.currentUser || !this.currentUser.user_fields) {
       return false;
     }
     const userFieldValue = this.currentUser.user_fields[this.dismissField.id];
