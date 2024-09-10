@@ -1,7 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
 export default {
-  name: "intro-video-initializer",
+  name: "intro-banner-initializer",
   initialize(container) {
     const site = container.lookup("service:site");
     const store = container.lookup("service:store");
