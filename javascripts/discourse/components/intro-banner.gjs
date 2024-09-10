@@ -40,7 +40,7 @@ export default class IntroBanner extends Component {
   }
 
   get dismissField() {
-    return this.site.user_fields.find(f => f.name === "Show Intro Banner");
+    return this.site.user_fields.find(f => f.name === "Hide Intro Banner");
   }
 
   determinedDismissed() {
