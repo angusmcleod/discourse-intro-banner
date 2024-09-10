@@ -10,16 +10,6 @@ import DiscourseURL from "discourse/lib/url";
 import dIcon from "discourse-common/helpers/d-icon";
 
 const bannerLinks = [
-  {
-    icon: "far-calendar",
-    label: "Events Plugin",
-    url: "/c/discourse-events"
-  },
-  {
-    icon: "question-circle",
-    label: "Get Support",
-    url: "/new-message?username=angus&title=Support%20Request"
-  }
 ]
 
 export default class IntroBanner extends Component {
@@ -39,6 +29,10 @@ export default class IntroBanner extends Component {
 
   get show() {
     return this.router.currentRouteName === 'discovery.latest' && !this.dismissed;
+  }
+
+  get showBannerLinks() {
+    return bannerLinks.length > 0;
   }
 
   get dismissField() {
@@ -82,6 +76,7 @@ export default class IntroBanner extends Component {
           class="intro-banner-dismiss" />
         <div class="intro-banner-contents">
           <div class="intro-banner-video">
+            {{dIcon "play"}}
             <iframe
               width="640"
               height="360"
@@ -92,14 +87,16 @@ export default class IntroBanner extends Component {
               allowfullscreen>
             </iframe>
           </div>
-          <div class="intro-banner-links">
-            {{#each bannerLinks as |link|}}
-              <a {{on "click" (fn this.bannerLinkClick link.url)}}>
-                {{dIcon link.icon}}
-                <h3>{{link.label}}</h3>
-              </a>
-            {{/each}}
-          </div>
+          {{#if this.showBannerLinks}}
+            <div class="intro-banner-links">
+              {{#each bannerLinks as |link|}}
+                <a {{on "click" (fn this.bannerLinkClick link.url)}}>
+                  {{dIcon link.icon}}
+                  <h3>{{link.label}}</h3>
+                </a>
+              {{/each}}
+            </div>
+          {{/if}}
         </div>
       </div>
     {{/if}}
