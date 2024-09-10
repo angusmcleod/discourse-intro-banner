@@ -13,7 +13,7 @@ const bannerLinks = [
   {
     icon: "far-calendar",
     label: "Events Plugin",
-    url: "/c/events"
+    url: "/c/discourse-events"
   },
   {
     icon: "question-circle",
