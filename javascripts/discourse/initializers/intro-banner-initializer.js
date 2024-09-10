@@ -11,7 +11,7 @@ export default {
       const userFields = site.user_fields;
       const introBannerFieldExists = userFields.some(f => f.name === "Hide Intro Banner");
 
-      if (currentUser.admin && !introBannerFieldExists) {
+      if (currentUser && currentUser.admin && !introBannerFieldExists) {
         store
           .createRecord("user-field", {})
           .save({
