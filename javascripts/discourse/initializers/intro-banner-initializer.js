@@ -16,7 +16,7 @@ export default {
           .createRecord("user-field", {})
           .save({
             name: "Hide Intro Banner",
-            description: "Show the introductory banner on the homepage",
+            description: "Hide the introductory banner on the homepage",
             editable: true,
             show_on_profile: true,
             field_type: "confirm"
